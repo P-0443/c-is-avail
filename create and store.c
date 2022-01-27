@@ -15,21 +15,21 @@ int main()
  if((fptr = fopen("EmployeeDetails.txt","w"))==NULL){
   printf("Error opening file");
   //programe exist if the file pointer returns NULL.
-  exit(i);
+  exit(1);
   }
   printf("Enter a employee detailes:\n");
-  for(n = i; n < 3; ++n)
+  for(n = 1; n < 3; ++n)
   {
   printf("\nEmployeeName::");
-  scanf("%s",&emp.Name);
+  scanf("%s",&emp,'name');
   printf("\nEmployeeId::");
-  scanf("%d",&emp,Id);
+  scanf("%d",&emp,'Id');
   printf("\nEmployeeSalary::");
   scanf("%d",&emp.salary);
   printf("\nDestination::");
   scanf("%s",&emp.destination);
   {
-  fwrite(&emp,sizeof(struct employeeDetailes),i,fptr);
+  fwrite(&emp,'sizeof(struct employeeDetailes)',1,fptr);
   }
   fclose(fptr);
   }
@@ -37,7 +37,7 @@ int main()
   fptr = fopen("D:\\EmployeeDetailes.txt","a");
   for(n=1;n<3;++n)
   {
-  fread(&emp,sizeof(struct employeeDetailes),i,fptr);
-  printf("Name:%s\nId: %d\nSalary: %d\nDestination:%s\n",emp.Name,emp.Id,emp.Salary,emp.Destination);
+  fread(&emp,'sizeof(struct employeeDetailes)',1,fptr);
+  printf("Name:%s\nId: %d\nSalary: %d\nDestination:%s\n",emp.name,emp.Id,emp.salary,emp.destination);
   }
   }
